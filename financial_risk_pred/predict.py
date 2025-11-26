@@ -49,16 +49,3 @@ def predict(data, node_id):
 
     pred = out[node_id].exp()
     return pred.squeeze(0)
-
-
-if __name__ == '__main__':
-    dic = {0: "正常用户", 1: "欺诈用户"}
-    node_idx = 0
-    y_pred = predict(data, node_idx)
-    print(y_pred)
-    print(f'节点 {node_idx} 预测对应的标签为:{torch.argmax(y_pred)}, 为{dic[torch.argmax(y_pred).item()]}。')
-
-    node_idx = 1
-    y_pred = predict(data, node_idx)
-    print(y_pred)
-    print(f'节点 {node_idx} 预测对应的标签为:{torch.argmax(y_pred)}, 为{dic[torch.argmax(y_pred).item()]}。')

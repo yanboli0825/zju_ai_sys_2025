@@ -264,14 +264,6 @@ def train_model():
                     'optimizer_state_dict': optimizer.state_dict(),
                     'accuracy': accuracy,
                 }, os.path.join(config['save_ckpt_path'], f'best_model.pth'))
-            
-            # # 保存checkpoint
-            # torch.save({
-            #     'epoch': epoch + 1,
-            #     'model_state_dict': model.state_dict(),
-            #     'optimizer_state_dict': optimizer.state_dict(),
-            #     'accuracy': accuracy,
-            # }, os.path.join(config['save_ckpt_path'], f'efficientnet-{epoch+1}.pth'))
     
     print(f"\nTraining completed! Best accuracy: {best_acc:.2f}%")
     return history, model
